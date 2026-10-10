@@ -54,7 +54,7 @@ with st.sidebar:
 # ================================================================
 
 # 2. 初始化 Google GenAI Client
-client = genai.Client(api_key="你的_API_KEY_密鑰")
+client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
 # 3. 初始化對話歷史紀錄
 if "messages" not in st.session_state:
