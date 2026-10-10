@@ -53,8 +53,8 @@ def handle_message(event):
         )
         reply_text = response.text
     except Exception as e:
-        reply_text = "抱歉，目前 AI 伺服器連線發生異常，請稍後再試。"
-   
+        print(f"Gemini API Error: {str(e)}")  # 這行會把真正的錯誤印在 Render Logs
+        reply_text = f"發生錯誤: {str(e)}"      # 暫時把錯誤直接回傳到 LINE 以便排查
  # 將 Gemini 回應的內容透過 LINE Reply API 傳回給使用者
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
