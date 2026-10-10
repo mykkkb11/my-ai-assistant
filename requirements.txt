@@ -2,3 +2,5 @@ streamlit
 google-genai
 Pillow
 fastapi
+uvicorn
+line-bot-sdk
